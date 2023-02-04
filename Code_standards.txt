@@ -1,0 +1,7 @@
+I'll be making up a few standards for my code as I go.
+Expect these rules to be unconventional, but at least I'll have a consistent set of rules to follow.
+
+any .grid commands will happen in a separate line, AFTER defining the widget.
+
+For any text inputs, define the label widget BEFORE.
+    (This could be extrapolated to grouping code by visual location in the GUI, NOT functionality/type.)

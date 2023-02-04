@@ -10,19 +10,40 @@ from tkinter import ttk
 from datetime import datetime
 print(datetime.now()) #going to use this to track time spent downloading.
 
-root = Tk()
+root = Tk() #base window
+root.title('Gooey_v2 - Main')
+
+mainframe = ttk.Frame(root, padding = '3 3 12 12') #main frame in the 'root' window
+mainframe.grid(column = 0, row = 0, sticky=(N,W,E,S)) #grid within the main frame
+
+#expand the frame to fill any extra space on re-size:
+root.columnconfigure(0, weight = 1)
+root.rowconfigure(0, weight = 1)
 label = Label(text="Hello, Tkinter")
 
-root.title('Gooey_v2')
+
+
+#INPUT - URL Entry
+URL_label = ttk.Label(mainframe, text = "Video URL")
+URL_label.grid(column = 1, row = 1, sticky = W, padx = 5, pady = 5)
+
+URL = StringVar()
+URL_entry = ttk.Entry(mainframe, width = 25, textvariable = URL)
+URL_entry.grid(column = 2, row = 1, sticky = (W,E), padx = 5, pady = 5)
+
+URL_entry.focus()
+
 
 root.mainloop()
 
 
+#Padding every widget at once (if no custom padding is needed)
+# for child in mainframe.winfo_children(): 
+#     child.grid_configure(padx=5, pady=5)
+
 
 
 # YOUTUBE DL STUFF, DEAL WITH THIS ONCE THE GUI EXISTS
-# label.pack()
-# URL = input('Enter video URL::\n')
 
 
 # # https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L180
