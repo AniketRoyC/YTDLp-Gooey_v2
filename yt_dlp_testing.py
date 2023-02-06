@@ -15,8 +15,9 @@ ytdl_AUDonly = {
 ydl_opts = {
     'format': 'bestaudio/best',
     'postprocessors': [],
+     #TODO add a way for user to specify ffmpeg location '--ffmpeg-location'
 }
-
+# https://www.youtube.com/watch?v=dQw4w9WgXcQ
 def run_ytdl():
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         # info = ydl.extract_info(URL, download=False)
