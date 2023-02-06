@@ -29,7 +29,7 @@ def my_hook(d):
         print('Done downloading, now converting ...')
 
 ##=========================================================================
-vibecheck = {
+ytdl_AUDonly = {
     'key': 'FFmpegExtractAudio',
     'preferredcodec': 'mp3',
     'preferredquality': '192',
@@ -57,8 +57,8 @@ def run_ytdl():
         # print(json.dumps(ydl.sanitize_info(info)))
         ydl.download([URL])
 
-def XAUD_changed():
-    ydl_opts['postprocessors'] = vibecheck
+def XAUD_changed(): #runs every time the "Audio Only" checkbox is toggled
+    ydl_opts['postprocessors'] = ytdl_AUDonly
 
 
 
