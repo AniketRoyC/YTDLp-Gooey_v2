@@ -45,6 +45,11 @@ print(datetime.now()) #going to use this to track time spent downloading.
 # WIDGET FUNCTIONS =======================================================
 def RUN_button_func():
     print('Button pressed:: run_ytdl')
+# WISHFUL THINKING:
+    # UPDATE POSTPROCESSOR ARGUMENTS
+    # UPDATE YTDL OPTIONS
+    # RUN YTDL
+
     #     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
     #         # info = ydl.extract_info(URL, download=False)
 
@@ -53,8 +58,12 @@ def RUN_button_func():
     #         ydl.download([URL])
 
 def XAUD_changed(): #runs every time the "Audio Only" checkbox is toggled
+# WISHFUL THINKING:
+# SWITCHES POSPTORCESSOR OPTIONS BETWEEN AUDIO AND VIDEO VERSIONS
+# SWITCHES YTDL OPTIONS BETWEEN AUDIO AND VIDEO VERSIONS
+
     #ydl_opts['postprocessors'] = ytdl_AUDonly
-    if XAUD == 1:print('Checkbox:: Audio-only enabled')
+    if XAUD.get():print('Checkbox:: Audio-only enabled')
     else: print('Checkbox:: Audio-only disabled')
 
 # WIDGETS ================================================================
@@ -62,10 +71,14 @@ root = Tk() #base window
 root.title('Gooey_v2 - Main')
 
 #expand the frame to fill any extra space on re-size:
-root.columnconfigure([1,2], weight = 1)
+root.columnconfigure([1,2], weight = 1, )
 root.rowconfigure(0, weight = 1)
+root.configure(background='blue')
+#https://stackoverflow.com/questions/54476511/setting-background-color-of-a-tkinter-ttk-frame
+
 
 mainframe = ttk.Frame(root, padding = '3 3 12 12') #main frame in the 'root' window
+
 mainframe.grid(column = 0, row = 0, sticky=(N,W,E,S)) #grid within the main frame
 
 
